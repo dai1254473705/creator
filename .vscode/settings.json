@@ -1,6 +1,7 @@
 {
 	"vetur.format.defaultFormatter.ts": "prettier-tslint",
 	"vetur.format.defaultFormatter.js": "vscode-typescript",
+	"javascript.implicitProjectConfig.checkJs": true,
 	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
@@ -15,5 +16,6 @@
 		"html",
 		"typescript",
 		"vue"
-	]
+	],
+	"typescript.tsdk": "node_modules/typescript/lib"
 }
