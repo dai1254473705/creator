@@ -1,8 +1,19 @@
 {
-    "vetur.format.defaultFormatter.ts": "prettier-tslint",
-    "vetur.format.defaultFormatter.js": "vscode-typescript",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
+	"vetur.format.defaultFormatter.ts": "prettier-tslint",
+	"vetur.format.defaultFormatter.js": "vscode-typescript",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.options": {
+		"extensions": [".js", ".ts", ".tsx"]
+	},
+	"eslint.validate": [
+		//确定校验准则
+		"javascript",
+		"javascriptreact",
+		"html",
+		"typescript",
+		"vue"
+	]
 }
