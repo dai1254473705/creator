@@ -1,0 +1,31 @@
+/*!
+ * 菜单样式
+ */
+.menu-list {
+	.menu-item {
+		height: 30px;
+		background: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 150px;
+		border-radius: 10px;
+		color: var(--text-color);
+		margin-top: 10px;
+		cursor: pointer;
+		&:hover {
+			background: var(--background-bold-color);
+		}
+		&.active {
+			background: var(--primary-color);
+			color: #fff;
+		}
+	}
+	.menu-icon {
+		font-size: 14px;
+		margin-right: 10px;
+	}
+	.menu-text {
+		font-size: 14px;
+	}
+}
