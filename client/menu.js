@@ -10,9 +10,9 @@ const menuConfig = [
 		label: 'haha',
 		submenu: [
 			{
-				label: '优酷',
+				label: '编辑器',
 				click: async () => {
-					loadUrl('http://www.youku.com');
+					loadUrl('/mdnice/index.html#/');
 				},
 			},
 			{
