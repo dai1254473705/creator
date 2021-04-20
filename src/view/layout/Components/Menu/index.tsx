@@ -4,34 +4,33 @@
 import './index.scss';
 import React, { Component } from 'react';
 import Icon from '../../../../components/Icon';
+import MenuConfig from './config';
 
 export default class MenuList extends Component<any, any> {
-	onClick = (url: string) => {
+	onClick = (item: string) => {
 		this.props.onChange(url);
 	};
 
 	render() {
 		return (
 			<div className="menu-list">
-				<div className="menu-item">
-					<span className="menu-icon">
-						<Icon name="iconwechat" />
-					</span>
-					<span
-						className="menu-text"
-						onClick={e => {
-							this.onClick('/mdnice/index.html');
-						}}
-					>
-						markdown
-					</span>
-				</div>
-				<div className="menu-item active">
-					<span className="menu-icon">
-						<Icon name="iconnavicon-wzgl" />
-					</span>
-					<span className="menu-text">推荐</span>
-				</div>
+				{MenuConfig.map(item => {
+					return (
+						<div className="menu-item" key={item.title}>
+							<span className="menu-icon">
+								<Icon name={item.favicon} />
+							</span>
+							<span
+								className="menu-text"
+								onClick={e => {
+									this.onClick(item.url);
+								}}
+							>
+								{item.title}
+							</span>
+						</div>
+					);
+				})}
 			</div>
 		);
 	}
