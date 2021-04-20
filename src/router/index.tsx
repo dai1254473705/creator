@@ -11,8 +11,12 @@ import zhCN from 'antd/es/locale/zh_CN';
  */
 const childRoutes = [
 	{
-		path: '/home',
+		path: '/',
 		component: loadable(() => import('../view/home')),
+	},
+	{
+		path: '/WebView',
+		component: loadable(() => import('../components/WebView')),
 	},
 ];
 

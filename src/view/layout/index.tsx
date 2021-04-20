@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { Layout } from 'antd';
 import MenuList from './Components/Menu';
 import Logo from './Components/Logo';
+import { IMenu } from './Components/Menu/Menu';
 const { Header, Sider, Content } = Layout;
 import Icon from '../../Components/Icon';
 
@@ -13,6 +14,7 @@ export default class MainLayout extends Component {
 	state = {
 		collapsed: false,
 		url: '',
+		isWebView: false,
 	};
 
 	toggle = () => {
@@ -20,9 +22,10 @@ export default class MainLayout extends Component {
 			collapsed: !this.state.collapsed,
 		});
 	};
-	onMenuChange = (url: string) => {
+	onMenuChange = (item: IMenu) => {
 		this.setState({
-			url: url,
+			url: item.url,
+			isWebView: item.isWebView,
 		});
 	};
 
