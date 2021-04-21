@@ -2,7 +2,7 @@
  * 创建窗口
  */
 const { app, BrowserWindow, screen, BrowserView } = require('electron');
-
+const url = require('url');
 const path = require('path');
 const baseConfig = require('./baseConfig');
 /**
@@ -19,7 +19,7 @@ module.exports = () => {
 		width: width - 100,
 		height: height - 100,
 		webPreferences: {
-			webSecurity: false,
+			webSecurity: true,
 			webviewTag: true,
 			// preload: path.join(__dirname, 'preload.js'),
 		},
