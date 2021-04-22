@@ -6,12 +6,13 @@
 import React from 'react';
 type IProps = {
 	name: string;
+	className?: string;
 	onClick?(e: any): void;
 };
 const CustomIcon = (props: IProps) => {
-	const { name, onClick } = props;
+	const { name, onClick, className } = props;
 	return (
-		<svg className="icon svg-icon" aria-hidden="true" onClick={onClick}>
+		<svg className={`icon svg-icon ${className}`} aria-hidden="true" onClick={onClick}>
 			<use xlinkHref={`#${name}`}></use>
 		</svg>
 	);

@@ -26,9 +26,10 @@ export default class MainLayout extends Component {
 							const data: IMenu = routeHistory[parseInt(index)];
 							return (
 								<div className="header-item active" key={data.id}>
-									<Icon name={data.favicon} />
+									<span className="icon iconfont iconUser"></span>
+									{/* <Icon className="favicon" name={data.favicon} /> */}
 									<h1>{data.title}</h1>
-									<Icon name="iconClose" onClick={() => Store.route.removeRoute(data)} />
+									<Icon className="closeicon" name="iconClose" onClick={() => Store.route.removeRoute(data)} />
 								</div>
 							);
 						})}

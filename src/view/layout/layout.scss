@@ -1,3 +1,106 @@
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); //  remove tap highlight color for mobile safari
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font-size: 12px;
+	//font-family: 'Pingfang SC','Microsoft YaHei', Helvetica Neue, Arial, sans-serif;
+	font-family: 'Pingfang SC', 'Microsoft YaHei', Helvetica Neue, Arial, sans-serif;
+	line-height: 1.5;
+	background: #fff;
+	margin: 0 auto;
+	//-webkit-font-smoothing: antialiased;
+	//-moz-osx-font-smoothing: grayscale;
+	//font-weight: 300;
+	color: #333;
+}
+
+:focus {
+	outline: none;
+}
+
+.hidden {
+	display: none;
+}
+
+// unify the setting of elements's margin and padding for browsers
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+// Reset fonts for relevant elements
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+ul,
+li,
+ol {
+	list-style: none;
+}
+
+// Remove the clear button of a text input control in IE10+
+input::-ms-clear,
+input::-ms-reveal {
+	display: none;
+}
 .app-content {
 	display: flex;
 	flex-direction: row;
@@ -19,6 +122,44 @@
 		height: 100vh;
 		.iframe {
 			width: 100%;
+		}
+	}
+}
+.header-list {
+	overflow-x: auto;
+	height: 50px;
+	border-bottom: 1px solid var(--border-color-base);
+	width: 100%;
+	.header-item {
+		height: 50px;
+		line-height: 50px;
+		flex-direction: row;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 200px;
+		float: left;
+		border-right: 1px solid var(--warning-color);
+		padding: 0 10px;
+		h1 {
+			font-size: 14px;
+			padding: 10px;
+		}
+		&.active {
+			background-color: var(--primary-color);
+			color: var(--ThemeWhiteColor);
+			h1 {
+				font-size: 16px;
+				color: var(--ThemeWhiteColor);
+				padding: 10px;
+			}
+			.closeicon {
+				color: var(--text-color);
+			}
+		}
+		.favicon:hover {
+			color: var(--text-color);
+			font-size: 18px;
 		}
 	}
 }

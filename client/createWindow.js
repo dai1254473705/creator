@@ -19,8 +19,11 @@ module.exports = () => {
 		width: width - 100,
 		height: height - 100,
 		webPreferences: {
+			allowRunningInsecureContent: true,
 			webSecurity: true,
 			webviewTag: true,
+			javascript: true,
+			scrollBounce: true,
 			// preload: path.join(__dirname, 'preload.js'),
 		},
 	});
