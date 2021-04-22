@@ -157,9 +157,13 @@ input::-ms-reveal {
 				color: var(--text-color);
 			}
 		}
-		.favicon:hover {
+		.svg-icon {
+			font-size: 14px;
 			color: var(--text-color);
-			font-size: 18px;
+		}
+		.closeicon:hover {
+			fill: var(--warning-color);
+			cursor: pointer;
 		}
 	}
 }
