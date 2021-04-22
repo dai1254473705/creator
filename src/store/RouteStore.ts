@@ -1,7 +1,7 @@
 /**
  * 控制全局的UI样式
  */
-import { observable, action } from 'mobx';
+import { observable, action, toJS } from 'mobx';
 import { IMenu, IHistoryMenu } from '../../type.d';
 
 class MenuStore {
@@ -15,6 +15,7 @@ class MenuStore {
 			favicon: 'iconnavicon-wzgl',
 			isWebView: false,
 			url: 'https://docs.qq.com/desktop/',
+			active: false,
 		},
 		{
 			id: 2,
@@ -22,6 +23,7 @@ class MenuStore {
 			favicon: 'iconwechat',
 			isWebView: true,
 			url: 'https://docs.qq.com/desktop/',
+			active: false,
 		},
 		{
 			id: 3,
@@ -29,16 +31,10 @@ class MenuStore {
 			favicon: 'iconwechat',
 			isWebView: false,
 			url: '/mdnice/index.html',
+			active: false,
 		},
 	];
 
-	@observable public currentMenu: IMenu = {
-		id: 3,
-		title: 'markdown',
-		favicon: 'iconwechat',
-		isWebView: false,
-		url: '/mdnice/index.html',
-	};
 	/**
 	 * 当前打开状态的菜单
 	 */
@@ -51,6 +47,10 @@ class MenuStore {
 	@action
 	public pushRoute = (menu: IMenu) => {
 		console.log(menu);
+		Object.keys(this.routeHistory).map(key => {
+			this.routeHistory[parseInt(key)].active = false;
+		});
+		menu.active = true;
 		this.routeHistory[menu.id] = menu;
 		console.log(this.routeHistory, 'routeHistory');
 	};
@@ -61,8 +61,16 @@ class MenuStore {
 	 */
 	@action
 	public removeRoute = (menu: IMenu) => {
+		const keyList = Object.keys(this.routeHistory);
+		const currentKeyIndex = keyList.findIndex(key => parseInt(key) === menu.id);
+		const preKeyIndex = currentKeyIndex - 1;
+		const preKey = keyList[preKeyIndex];
+		console.log(preKeyIndex, 'key');
 		delete this.routeHistory[menu.id];
-		console.log(this.routeHistory, 'routeHistory');
+		// 激活前一个
+		if (preKeyIndex > -1 && this.routeHistory[parseInt(preKey)] && menu.active) {
+			this.routeHistory[parseInt(preKey)].active = true;
+		}
 	};
 }
 

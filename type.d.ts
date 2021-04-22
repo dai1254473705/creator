@@ -5,6 +5,7 @@ export interface IMenu {
 	favicon: string;
 	isWebView: boolean;
 	url: string;
+	active?: boolean;
 }
 /**
  * 当前history中的菜单记录
