@@ -1,6 +1,6 @@
 {
-	"compilerOptions": {
-		"experimentalDecorators": true,
+  "compilerOptions": {
+    "experimentalDecorators": true,
 		"target": "es6",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
@@ -15,8 +15,14 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react-jsx"
-	},
-	"exclude": ["node_modules", "public"],
-	"include": ["src"]
+		"jsx": "react-jsx",
+  },
+  "exclude": [
+    "test",
+    "release",
+    "src/main.prod.js",
+    "src/renderer.prod.js",
+    "src/dist",
+    ".erb/dll"
+  ]
 }

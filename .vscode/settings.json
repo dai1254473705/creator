@@ -1,21 +1,29 @@
 {
-	"vetur.format.defaultFormatter.ts": "prettier-tslint",
-	"vetur.format.defaultFormatter.js": "vscode-typescript",
-	"javascript.implicitProjectConfig.checkJs": true,
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
-	},
-	"eslint.options": {
-		"extensions": [".js", ".ts", ".tsx"]
-	},
-	"eslint.validate": [
-		//确定校验准则
-		"javascript",
-		"javascriptreact",
-		"html",
-		"typescript",
-		"vue"
-	],
-	"typescript.tsdk": "node_modules/typescript/lib"
+  "files.associations": {
+    ".babelrc": "jsonc",
+    ".eslintrc": "jsonc",
+    ".prettierrc": "jsonc",
+    ".eslintignore": "ignore"
+  },
+
+  "javascript.validate.enable": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+
+  "search.exclude": {
+    ".git": true,
+    ".eslintcache": true,
+    "src/dist": true,
+    "src/main.prod.js": true,
+    "src/main.prod.js.map": true,
+    "bower_components": true,
+    "dll": true,
+    "release": true,
+    "node_modules": true,
+    "npm-debug.log.*": true,
+    "test/**/__snapshots__": true,
+    "yarn.lock": true,
+    "*.{css,sass,scss}.d.ts": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
