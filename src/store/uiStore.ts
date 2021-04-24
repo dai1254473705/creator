@@ -4,11 +4,11 @@
 import { observable, action } from 'mobx';
 
 class UIStore {
-	@observable public theme = 'blue';
+	@observable public showMenu = true;
 
 	@action
-	changeTheme(theme: string) {
-		this.theme = theme;
+	changeShowMenu = (flag: boolean)=> {
+		this.showMenu = flag;
 	}
 }
 

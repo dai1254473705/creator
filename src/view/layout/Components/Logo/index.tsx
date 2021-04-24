@@ -4,7 +4,7 @@
 import './index.scss';
 import React, { Component } from 'react';
 
-export default class Logo extends Component {
+export default class Logo extends Component<{},{}> {
 	render() {
 		return (
 			<div className="menu-logo">

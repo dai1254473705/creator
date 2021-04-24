@@ -105,16 +105,48 @@ input::-ms-reveal {
 	display: flex;
 	flex-direction: row;
 	justify-content: left;
-	align-items: flex-start;
+  align-items: flex-start;
+  .iframe{
+    width: 100vw;
+    height:100vh;
+  }
 	.app-left {
 		display: flex;
-		width: 200px;
 		height: 80px;
-		background: var(--background-color);
+		background: var(--white-color);
 		height: 100vh;
 		justify-content: flex-start;
 		flex-direction: column;
-		align-items: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 3px 20px -15px rgba(0, 0, 0, 0.6);
+    width: 0px;
+    &.active{
+      width: 200px;
+    }
+    &:hover{
+      opacity: 1;
+      // border-right: none;
+    }
+    .close-bar{
+      position: absolute;
+      right: -10px;
+      height: 100%;
+      width: 10px;
+	    background: var(--grey-color);
+      opacity: 0;
+      cursor: pointer;
+      &:hover{
+        opacity: 1;
+      }
+      .close-icon{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        color: var(--white-color);
+        font-size: 9px;
+      }
+    }
 	}
 	.app-right {
 		display: flex;

@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import icon from '../assets/icon.svg';
+import { BrowserRouter} from 'react-router-dom';
 import Router from './router';
 
-import './static/css/theme-blue.scss';
+import './static/css/theme.scss';
 
 export default function App() {
   return (
