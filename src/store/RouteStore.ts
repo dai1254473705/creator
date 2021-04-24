@@ -13,17 +13,16 @@ class MenuStore {
       id: '1',
       title: '推荐',
       isWebView: true,
-      url: 'https://docs.qq.com/desktop/',
       active: true,
       children: [
-        {
-          id: '1-1',
-          title: '96编辑器',
-          favicon: 'iconai-article',
-          isWebView: true,
-          url: 'https://bj.96weixin.com/',
-          active: false,
-        },
+        // {
+        //   id: '1-1',
+        //   title: '96编辑器',
+        //   favicon: 'iconai-article',
+        //   isWebView: true,
+        //   url: 'https://bj.96weixin.com/',
+        //   active: false,
+        // },
       ],
     },
     {
@@ -58,7 +57,7 @@ class MenuStore {
       children: [],
     },
   ];
-  @observable public currentHistory:IMenu = this.MENULIST[0].children[0];
+  @observable public currentHistory:IMenu = [];
   /**
    * 激活状态
    * @param menu

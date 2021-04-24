@@ -6,6 +6,7 @@ export interface IMenu {
 	isWebView?: boolean;
 	url?: string;
   active?: boolean;
+  bgColor?: string;
   children?: IMenu[]
 }
 /**

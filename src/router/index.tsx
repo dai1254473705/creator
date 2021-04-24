@@ -6,22 +6,14 @@ import AppLayout from '../view/layout';
  * 将权限id放在这里直接维护处理
  */
 const childRoutes = [
-	// {
-	// 	path: '/',
-	// 	component: loadable(() => import('../view/home')),
-  // },
+	{
+		path: '/',
+		component: loadable(() => import('../view/home')),
+  },
   {
 		path: '/web',
 		component: loadable(() => import('../view/web')),
   },
-  {
-		path: '/',
-		component: loadable(() => import('../view/mdnice')),
-	},
-	// {
-	// 	path: '/WebView',
-	// 	component: loadable(() => import('../components/WebView')),
-	// },
 ];
 
 export default function App() {
